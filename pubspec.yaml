@@ -1,0 +1,10 @@
+name: bangla_utils
+description: Bangla digits, month and weekday names, taka formatting, and crash-safe parsing of API values that may arrive as strings.
+version: 1.0.0
+repository: https://github.com/fokhrolislam/bangla-utils-dart
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dev_dependencies:
+  test: ^1.25.0
