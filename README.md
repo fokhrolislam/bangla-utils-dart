@@ -1,13 +1,21 @@
-# bangla_utils
+# bangla_format
+
+[![pub package](https://img.shields.io/pub/v/bangla_format.svg)](https://pub.dev/packages/bangla_format) [![tests](https://github.com/fokhrolislam/bangla-utils-dart/actions/workflows/test.yml/badge.svg)](https://github.com/fokhrolislam/bangla-utils-dart/actions/workflows/test.yml)
 
 Small, dependency-free Dart helpers for apps that speak Bangla and talk to a PHP/MySQL backend.
 
 Extracted from the [Sabaq](https://sabaaq.com) Flutter app, where they run on every screen.
 
+## Install
+
+```
+dart pub add bangla_format
+```
+
 ## Bangla digits, dates and taka
 
 ```dart
-import 'package:bangla_utils/bangla_utils.dart';
+import 'package:bangla_format/bangla_format.dart';
 
 Bn.num(123);                        // '১২৩'
 Bn.ascii('১২৩');                    // '123'
