@@ -1,4 +1,4 @@
-import 'package:bangla_utils/bangla_utils.dart';
+import 'package:bangla_format/bangla_format.dart';
 import 'package:test/test.dart';
 
 void main() {
