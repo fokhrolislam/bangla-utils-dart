@@ -1,6 +1,6 @@
 /// Bangla digits, month and weekday names, short taka amounts, and crash-safe
 /// parsing of values that arrive from a PHP/MySQL backend as strings.
-library bangla_utils;
+library;
 
 // `Bn.num()` shadows the `num` type inside the class; this alias keeps it usable.
 typedef _Num = num;
@@ -10,23 +10,57 @@ class Bn {
   Bn._();
 
   static const digits = {
-    '0': '০', '1': '১', '2': '২', '3': '৩', '4': '৪',
-    '5': '৫', '6': '৬', '7': '৭', '8': '৮', '9': '৯',
+    '0': '০',
+    '1': '১',
+    '2': '২',
+    '3': '৩',
+    '4': '৪',
+    '5': '৫',
+    '6': '৬',
+    '7': '৭',
+    '8': '৮',
+    '9': '৯',
   };
 
   static const months = [
-    'জানুয়ারি', 'ফেব্রুয়ারি', 'মার্চ', 'এপ্রিল', 'মে', 'জুন',
-    'জুলাই', 'আগস্ট', 'সেপ্টেম্বর', 'অক্টোবর', 'নভেম্বর', 'ডিসেম্বর',
+    'জানুয়ারি',
+    'ফেব্রুয়ারি',
+    'মার্চ',
+    'এপ্রিল',
+    'মে',
+    'জুন',
+    'জুলাই',
+    'আগস্ট',
+    'সেপ্টেম্বর',
+    'অক্টোবর',
+    'নভেম্বর',
+    'ডিসেম্বর',
   ];
 
   static const monthsShort = [
-    'জানু', 'ফেব', 'মার্চ', 'এপ্রি', 'মে', 'জুন',
-    'জুলা', 'আগ', 'সেপ্ট', 'অক্টো', 'নভে', 'ডিসে',
+    'জানু',
+    'ফেব',
+    'মার্চ',
+    'এপ্রি',
+    'মে',
+    'জুন',
+    'জুলা',
+    'আগ',
+    'সেপ্ট',
+    'অক্টো',
+    'নভে',
+    'ডিসে',
   ];
 
   /// Monday first, matching `DateTime.weekday`.
   static const weekdays = [
-    'সোমবার', 'মঙ্গলবার', 'বুধবার', 'বৃহস্পতিবার', 'শুক্রবার', 'শনিবার', 'রবিবার',
+    'সোমবার',
+    'মঙ্গলবার',
+    'বুধবার',
+    'বৃহস্পতিবার',
+    'শুক্রবার',
+    'শনিবার',
+    'রবিবার',
   ];
 
   /// ASCII digits to Bangla digits: `123` → `১২৩`. Other characters pass through.
@@ -145,8 +179,9 @@ bool bool0(dynamic v) {
 }
 
 /// Any value → `Map<String, dynamic>`, or an empty map (never throws).
-Map<String, dynamic> mapOf(dynamic v) =>
-    v is Map ? v.map((k, val) => MapEntry(k.toString(), val)) : <String, dynamic>{};
+Map<String, dynamic> mapOf(dynamic v) => v is Map
+    ? v.map((k, val) => MapEntry(k.toString(), val))
+    : <String, dynamic>{};
 
 /// Any value → `List`, or an empty list (never throws).
 List<dynamic> listOf(dynamic v) => v is List ? v : const [];
